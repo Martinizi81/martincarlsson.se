@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Martin Carlsson</title>
+  <meta name="description" content="Martin Carlsson, Tierp. Chef Trygghetstjänster på Länsförsäkringar Gävleborg, medgrundare av Successifier och Supportifier, moderat i Tierps kommun.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+  <style>
+  :root {
+    --bg: #F5F7F9;
+    --ink: #16232E;
+    --muted: #55656F;
+    --accent: #B5622E;
+    --line: #D6DEE4;
+    --tile: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F171E; --ink: #E6ECF0; --muted: #98A8B3; --accent: #E08E57; --line: #263440; --tile: #16212B;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F171E; --ink: #E6ECF0; --muted: #98A8B3; --accent: #E08E57; --line: #263440; --tile: #16212B;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    font-size: 18px;
+    line-height: 1.55;
+    padding-inline: 20px;
+    padding-block: 0;
+  }
+  main { max-width: 700px; margin: 0 auto; display: grid; gap: 56px; padding-block: 56px 64px; }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  h1 {
+    font-family: "Bricolage Grotesque", "Arial Narrow", sans-serif;
+    font-weight: 700; font-size: clamp(44px, 9vw, 76px); line-height: 0.98;
+    letter-spacing: -0.02em; margin: 10px 0 20px; text-wrap: balance;
+  }
+  .lede { font-size: 22px; line-height: 1.4; max-width: 34ch; margin: 0; text-wrap: balance; }
+  .lede strong { font-weight: 600; }
+  .bio { margin: 20px 0 0; max-width: 62ch; color: var(--ink); }
+  .notme { margin: 18px 0 0; font-size: 16px; color: var(--muted); max-width: 62ch; }
+
+  .roles { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .role { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding-block: 26px; border-bottom: 1px solid var(--line); }
+  .role h2 {
+    font-family: "Bricolage Grotesque", "Arial Narrow", sans-serif;
+    font-weight: 700; font-size: 22px; line-height: 1.15; margin: 0 0 6px; letter-spacing: -0.01em; text-wrap: balance;
+  }
+  .role p { margin: 0; max-width: 58ch; }
+  .role p + p { margin-top: 10px; }
+  .role .eyebrow { padding-top: 5px; }
+  a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .find h2 { font-family: "Bricolage Grotesque", sans-serif; font-size: 22px; font-weight: 700; margin: 0 0 14px; }
+  .links { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .links li { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; }
+  .links .k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); min-width: 120px; }
+  .todo { background: var(--tile); border: 1px dashed var(--accent); color: var(--accent); font-size: 14px; padding: 1px 8px; border-radius: 3px; font-family: "IBM Plex Mono", monospace; }
+
+  footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; font-size: 15px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 20px; }
+
+  @media (max-width: 560px) {
+    .role { grid-template-columns: 1fr; gap: 6px; }
+    main { gap: 44px; padding-block: 40px 48px; }
+  }
+</style>
+  <link rel="canonical" href="https://martincarlsson.se/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Martin Carlsson">
+  <meta property="og:description" content="Chef Trygghetstjänster på Länsförsäkringar Gävleborg, medgrundare av Successifier och Supportifier, moderat i Tierps kommun.">
+  <meta property="og:url" content="https://martincarlsson.se/">
+  <meta property="og:locale" content="sv_SE">
+  <style>
+    html, body { margin: 0; }
+    img { max-width: 100%; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Tierp, Uppland</div>
+    <h1>Martin Carlsson</h1>
+    <p class="lede">Chef Trygghetstjänster på <strong>Länsförsäkringar Gävleborg</strong>. Medgrundare av <strong>Successifier</strong>. Moderat i <strong>Tierps kommun</strong>.</p>
+    <p class="bio">Jag har jobbat med IT och digital affärsutveckling i hela mitt yrkesliv, som IT-chef, i ledningsgrupp och som styrelseledamot. Idag ligger fokus på digital försäljning, marknadsföring, AI och automation: att göra trygghet och kundservice enklare med hjälp av teknik som faktiskt fungerar i vardagen.</p>
+    <p class="notme">Det finns många Martin Carlsson. Jag är inte läkaren, inte hockeyspelaren och inte chefredaktören på Sweden Rock. Jag är den i Tierp.</p>
+  </header>
+
+  <section class="roles" aria-label="Vad jag gör">
+    <article class="role">
+      <div class="eyebrow">Dagtid</div>
+      <div>
+        <h2>Chef Trygghetstjänster, Länsförsäkringar Gävleborg</h2>
+        <p>Jag ansvarar för <a href="https://www.lansforsakringar.se/gavleborg/">Länsförsäkringar Gävleborgs</a> trygghetstjänster, däribland <strong>Alf</strong>, vårt proaktiva erbjudande för ett tryggare och smartare hem. Uppdraget är att förebygga skador innan de sker, inte bara ersätta dem efteråt.</p>
+      </div>
+    </article>
+
+    <article class="role">
+      <div class="eyebrow">Kvällar och helger</div>
+      <div>
+        <h2>Medgrundare, Successifier AB</h2>
+        <p>Tillsammans med huvudgrundaren Rickard Collander bygger jag <a href="https://successifier.com">Successifier</a>, en AI-plattform för kundframgång. Just nu går det mesta av tiden till <a href="https://supportifier.se">Supportifier</a>: en tjänst som bygger en kunskapsbas av företagets befintliga dokument, webbplats och tidigare ärenden, och använder den i hjälpcenter, chatt, formulär och inkorg. Ni har redan svarat på frågan. Låt svaret hjälpa nästa kund också.</p>
+      </div>
+    </article>
+
+    <article class="role">
+      <div class="eyebrow">Tierp</div>
+      <div>
+        <h2>Moderaterna i Tierps kommun</h2>
+        <p>Jag är engagerad i <a href="https://moderaterna.se/tierp/">Moderaterna i Tierp</a> och kandiderade till kommunfullmäktige i valet 2026. Jag bor i Tierp med familjen och vill att kommunen ska vara en plats där det är enkelt att bo, driva företag och få saker gjorda.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="find">
+    <h2>Hitta mig</h2>
+    <ul class="links">
+      <li><span class="k">LinkedIn</span> <a href="https://www.linkedin.com/in/martincarlsson/">linkedin.com/in/martincarlsson</a></li>
+      <li><span class="k">Instagram</span> <a href="https://www.instagram.com/martinizi/">@martinizi</a></li>
+      <li><span class="k">Supportifier</span> <a href="https://supportifier.se">supportifier.se</a></li>
+      <li><span class="k">Successifier</span> <a href="https://successifier.com">successifier.com</a> <span>·</span> <a href="https://successifier.se">successifier.se</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>© 2026 Martin Carlsson</span>
+    <span>martincarlsson.se</span>
+  </footer>
+</main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://martincarlsson.se/#person",
+  "name": "Martin Carlsson",
+  "url": "https://martincarlsson.se/",
+  "jobTitle": "Chef Trygghetstjänster",
+  "worksFor": { "@type": "Organization", "name": "Länsförsäkringar Gävleborg", "url": "https://www.lansforsakringar.se/gavleborg/" },
+  "affiliation": [
+    { "@type": "Organization", "name": "Successifier AB", "url": "https://successifier.com" },
+    { "@type": "Organization", "name": "Moderaterna Tierp", "url": "https://moderaterna.se/tierp/" }
+  ],
+  "homeLocation": { "@type": "Place", "name": "Tierp, Uppland, Sverige" },
+  "knowsAbout": ["Trygghetstjänster", "Smarta hem", "Digital försäljning", "AI", "Automation", "Kundservice"],
+  "sameAs": [
+    "https://www.linkedin.com/in/martincarlsson/",
+    "https://www.instagram.com/martinizi/",
+    "https://supportifier.se",
+    "https://successifier.com",
+    "https://successifier.se"
+  ]
+}
+</script>
+</body>
+</html>
