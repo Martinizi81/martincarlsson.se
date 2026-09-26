@@ -11,6 +11,11 @@
   <meta property="og:description" content="Chef Trygghetstjänster på Länsförsäkringar Gävleborg, medgrundare av Successifier och Supportifier, moderat i Tierps kommun.">
   <meta property="og:url" content="https://martincarlsson.se/">
   <meta property="og:locale" content="sv_SE">
+  <meta property="og:image" content="https://martincarlsson.se/martin-carlsson-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Martin Carlsson, Tierp">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#F4F1EA" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0C1218" media="(prefers-color-scheme: dark)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,15 +114,10 @@
   .btn:hover .arrow { transform: translateX(4px); }
 
   .portrait { position: relative; margin: 0; justify-self: end; width: min(100%, 440px); aspect-ratio: 4 / 5; }
-  .portrait img, .portrait .placeholder {
+  .portrait img {
     width: 100%; height: 100%; object-fit: cover;
     border-radius: 200px 200px 28px 28px;
     box-shadow: var(--shadow);
-  }
-  .portrait .placeholder {
-    display: grid; place-items: center;
-    background: linear-gradient(160deg, var(--accent), var(--accent-2));
-    color: #fff; font-size: clamp(64px, 9vw, 120px); line-height: 1;
   }
   .portrait .badge {
     position: absolute; left: -14px; bottom: 26px;
@@ -237,8 +237,7 @@
       </div>
     </div>
     <figure class="portrait">
-      <!-- Platshållare tills fotot är på plats. Byts mot <img src="martin-carlsson.jpg" alt="Martin Carlsson, Tierp"> -->
-      <div class="placeholder display" role="img" aria-label="Porträtt av Martin Carlsson kommer snart">MC</div>
+      <img src="martin-carlsson.jpg" alt="Martin Carlsson, Tierp" width="880" height="1100" fetchpriority="high" decoding="async">
       <div class="badge"><b>Rätt Martin Carlsson</b><small>Den i Tierp, inte läkaren.</small></div>
     </figure>
   </div>
@@ -340,6 +339,7 @@
   "@id": "https://martincarlsson.se/#person",
   "name": "Martin Carlsson",
   "url": "https://martincarlsson.se/",
+  "image": "https://martincarlsson.se/martin-carlsson.jpg",
   "jobTitle": "Chef Trygghetstjänster",
   "worksFor": { "@type": "Organization", "name": "Länsförsäkringar Gävleborg", "url": "https://www.lansforsakringar.se/gavleborg/" },
   "affiliation": [
