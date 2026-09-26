@@ -193,6 +193,30 @@
   .links a:hover { transform: translateY(-3px); border-color: var(--accent); }
   .links .k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
 
+  /* E-post: visas först vid klick, så att adressen inte ligger i källkoden */
+  .links .mail { position: relative; }
+  .links .mail-btn, .links .mail-open {
+    display: inline-flex; align-items: center; gap: 12px; color: var(--ink); font: inherit; cursor: pointer;
+    background: var(--tile); border: 1px dashed var(--accent); border-radius: 999px; padding: 12px 18px 12px 14px;
+    transition: transform .25s cubic-bezier(.2,.8,.2,1), border-color .25s;
+  }
+  .links .mail-btn:hover { transform: translateY(-3px); }
+  .links .mail-open { border-style: solid; border-color: var(--line); cursor: default; }
+  .links .mail-addr { color: var(--ink); text-decoration: none; user-select: none; -webkit-user-select: none; }
+  .links .mail-addr:hover { color: var(--accent); }
+  .links .mail-copy { font: inherit; font-size: 13px; font-weight: 600; color: #fff; background: var(--ink); border: 0; border-radius: 999px; padding: 6px 12px; cursor: pointer; transition: background .2s, transform .2s; }
+  .links .mail-copy:hover { background: var(--accent); transform: translateY(-1px); }
+  .links .mail-copy.ok { background: var(--accent-2); }
+  .links .mail-toast {
+    position: absolute; left: 12px; bottom: calc(100% + 10px); z-index: 2; white-space: nowrap;
+    background: var(--ink); color: var(--bg); font-size: 14px; padding: 8px 12px; border-radius: 10px; box-shadow: var(--shadow);
+    opacity: 0; transform: translateY(6px); transition: opacity .25s, transform .25s; pointer-events: none;
+  }
+  .links .mail-toast::after { content: ""; position: absolute; left: 18px; top: 100%; border: 6px solid transparent; border-top-color: var(--ink); }
+  .links .mail-toast.show { opacity: 1; transform: none; }
+  html:not(.js) .links .mail-btn { display: none; }
+  .links .mail [hidden] { display: none !important; }
+
   footer { padding-block: 28px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; font-size: 15px; color: var(--muted); }
 
   /* ---------- Quiz ---------- */
@@ -245,7 +269,7 @@
     .quiz-opt, .quiz-dots i { transition: none; }
     .hero::before, .hero::after, .portrait .badge, .ticker-track { animation: none; }
     .js .reveal { opacity: 1; transform: none; transition: none; }
-    .card, .btn, .links a { transition: none; }
+    .card, .btn, .links a, .links .mail-btn, .links .mail-copy, .links .mail-toast { transition: none; }
   }
 
   /* ---------- Mobil ---------- */
@@ -379,9 +403,20 @@
       <ul class="links">
         <li><a href="https://www.linkedin.com/in/martincarlsson/"><span class="k">LinkedIn</span> linkedin.com/in/martincarlsson</a></li>
         <li><a href="https://www.instagram.com/martinizi/"><span class="k">Instagram</span> @martinizi</a></li>
+        <li><a href="https://www.facebook.com/martin.carlsson"><span class="k">Facebook</span> facebook.com/martin.carlsson</a></li>
         <li><a href="https://supportifier.se"><span class="k">Supportifier</span> supportifier.se</a></li>
         <li><a href="https://successifier.com"><span class="k">Successifier</span> successifier.com</a></li>
         <li><a href="https://successifier.se"><span class="k">Successifier</span> successifier.se</a></li>
+        <li class="mail" id="mail" data-u="nosslrac.nitram" data-d="moc.liamg">
+          <button type="button" class="mail-btn" id="mail-show"><span class="k">E-post</span> <span class="mail-label">Klicka för att visa adressen</span></button>
+          <span class="mail-open" hidden>
+            <span class="k">E-post</span>
+            <a class="mail-addr" id="mail-addr" href="#">…</a>
+            <button type="button" class="mail-copy" id="mail-copy" aria-label="Kopiera e-postadressen">Kopiera</button>
+          </span>
+          <noscript><span class="k">E-post</span> martin punkt carlsson snabel-a gmail punkt com</noscript>
+          <span class="mail-toast" id="mail-toast" role="status" aria-live="polite"></span>
+        </li>
       </ul>
     </div>
   </section>
@@ -477,6 +512,31 @@
     });
     render();
   })();
+
+  // E-post: adressen lagras baklänges i två delar och sätts ihop först när någon klickar.
+  (function () {
+    var li = document.getElementById('mail'); if (!li) return;
+    var rev = function (t) { return t.split('').reverse().join(''); };
+    var addr = rev(li.getAttribute('data-u')) + '@' + rev(li.getAttribute('data-d'));
+    var btn = document.getElementById('mail-show'), open = li.querySelector('.mail-open'),
+        a = document.getElementById('mail-addr'), copy = document.getElementById('mail-copy'), toast = document.getElementById('mail-toast'), timer;
+    function say(msg, ms) { toast.textContent = msg; toast.classList.add('show'); clearTimeout(timer); timer = setTimeout(function () { toast.classList.remove('show'); }, ms || 2600); }
+    function doCopy() {
+      var done = function () { copy.textContent = 'Kopierad'; copy.classList.add('ok'); say('Kopierad. Hälsningar från Tierp.'); setTimeout(function () { copy.textContent = 'Kopiera'; copy.classList.remove('ok'); }, 2200); };
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(addr).then(done, function () { say('Kunde inte kopiera automatiskt: ' + addr, 6000); }); }
+      else { say('Adressen: ' + addr, 6000); }
+    }
+    btn.addEventListener('click', function () {
+      a.textContent = addr; a.href = 'mailto:' + addr;
+      btn.hidden = true; open.hidden = false; copy.focus();
+      say('Där. Robotarna fick ingen adress, det fick du.', 3200);
+    });
+    copy.addEventListener('click', doCopy);
+    // Försöker man markera adressen med musen: knuffa mot knappen (och kopiera ändå om man kör Ctrl+C).
+    a.addEventListener('mousedown', function (e) { if (e.detail > 1) { e.preventDefault(); say('Psst, det finns en knapp för det →'); } });
+    a.addEventListener('selectstart', function (e) { e.preventDefault(); say('Psst, det finns en knapp för det →'); });
+    li.addEventListener('copy', function (e) { if (open.hidden) return; e.preventDefault(); e.clipboardData.setData('text/plain', addr); say('Kopierad ändå. Hälsningar från Tierp.'); });
+  })();
 </script>
 
 <script type="application/ld+json">
@@ -498,6 +558,7 @@
   "sameAs": [
     "https://www.linkedin.com/in/martincarlsson/",
     "https://www.instagram.com/martinizi/",
+    "https://www.facebook.com/martin.carlsson",
     "https://supportifier.se",
     "https://successifier.com",
     "https://successifier.se"
