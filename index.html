@@ -195,6 +195,44 @@
 
   footer { padding-block: 28px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; font-size: 15px; color: var(--muted); }
 
+  /* ---------- Quiz ---------- */
+  .quiz-wrap { background: var(--tile); border: 1px solid var(--line); border-radius: 32px; padding: clamp(24px, 4vw, 44px); box-shadow: var(--shadow); position: relative; overflow: hidden; }
+  .quiz-wrap::before { content: ""; position: absolute; inset: auto auto -120px -80px; width: 320px; height: 320px; border-radius: 50%; background: var(--glow-b); filter: blur(60px); pointer-events: none; }
+  .quiz-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 10px 20px; margin-bottom: 22px; }
+  .quiz-head .eyebrow { margin: 0; }
+  .quiz-dots { display: flex; gap: 8px; }
+  .quiz-dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); transition: background .3s, transform .3s; }
+  .quiz-dots i.on { background: var(--accent); transform: scale(1.2); }
+  .quiz-dots i.done { background: var(--accent-2); }
+  .quiz-q { margin: 0 0 22px; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.08; text-wrap: balance; max-width: 22ch; }
+  .quiz-opts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 0; padding: 0; list-style: none; }
+  .quiz-opt {
+    width: 100%; text-align: left; font: inherit; font-size: 17px; line-height: 1.35; color: var(--ink);
+    background: var(--bg); border: 1.5px solid var(--line); border-radius: 18px; padding: 16px 18px 16px 16px; cursor: pointer;
+    display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: center;
+    transition: transform .2s cubic-bezier(.2,.8,.2,1), border-color .2s, background .2s;
+  }
+  .quiz-opt .key { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; color: var(--muted); border: 1px solid var(--line); }
+  .quiz-opt:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .quiz-opt:hover .key { color: var(--accent); border-color: var(--accent); }
+  .quiz-opt.picked { border-color: var(--accent); background: var(--tile); }
+  .quiz-opt.picked .key { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .quiz-result { display: none; }
+  .quiz-result.show { display: block; animation: pop .5s cubic-bezier(.2,.8,.2,1); }
+  .quiz-result .verdict { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-2); margin: 0 0 8px; }
+  .quiz-result .verdict.miss { color: var(--accent); }
+  .quiz-result h3 { margin: 0 0 12px; font-size: clamp(28px, 4vw, 48px); line-height: 1.02; text-wrap: balance; }
+  .quiz-result p { margin: 0 0 22px; max-width: 56ch; font-size: 19px; }
+  .quiz-result .cta { margin-top: 0; }
+  .quiz-note { margin: 18px 0 0; font-size: 14px; color: var(--muted); }
+  .quiz-fade { animation: fadeq .35s ease; }
+  @keyframes fadeq { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @keyframes pop { from { opacity: 0; transform: scale(.97) translateY(10px); } to { opacity: 1; transform: none; } }
+  .no-js-only { display: none; }
+  html:not(.js) .no-js-only { display: block; }
+  html:not(.js) .quiz-live { display: none; }
+  @media (max-width: 640px) { .quiz-opts { grid-template-columns: 1fr; } }
+
   /* ---------- Rörelse ---------- */
   .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
   .js .reveal.in { opacity: 1; transform: none; }
@@ -203,6 +241,8 @@
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
+    .quiz-result.show, .quiz-fade { animation: none; }
+    .quiz-opt, .quiz-dots i { transition: none; }
     .hero::before, .hero::after, .portrait .badge, .ticker-track { animation: none; }
     .js .reveal { opacity: 1; transform: none; transition: none; }
     .card, .btn, .links a { transition: none; }
@@ -264,6 +304,7 @@
           <li>Chefredaktören på Sweden Rock</li>
           <li class="me">Den i Tierp. Det är jag.</li>
         </ul>
+        <p style="margin:16px 0 0; font-size:16px;"><a href="#quiz">Osäker på vilken du letar efter? Gör testet →</a></p>
       </aside>
     </div>
   </section>
@@ -293,6 +334,38 @@
           <p>Jag är engagerad i <a href="https://moderaterna.se/tierp/">Moderaterna i Tierp</a> och kandiderade till kommunfullmäktige i valet 2026. Jag bor i Tierp med familjen och vill att kommunen ska vara en plats där det är enkelt att bo, driva företag och få saker gjorda.</p>
           <span class="tag">Lokalpolitik</span>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz" aria-labelledby="quiz-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Ett litet test</p>
+        <h2 class="display" id="quiz-title">Vilken Martin Carlsson letar du efter?</h2>
+      </div>
+      <div class="quiz-wrap reveal">
+        <p class="no-js-only">Fyra frågor som avgör om du hamnat rätt. Testet kräver JavaScript. Kortversionen: söker du läkaren, hockeyspelaren eller Sweden Rock-redaktören är det inte jag. Söker du honom i Tierp med trygghetstjänster, AI och kommunpolitik har du hittat rätt.</p>
+        <div class="quiz-live">
+          <div class="quiz-head">
+            <p class="eyebrow" id="quiz-step">Fråga 1 av 4</p>
+            <div class="quiz-dots" aria-hidden="true" id="quiz-dots"><i class="on"></i><i></i><i></i><i></i></div>
+          </div>
+          <div id="quiz-stage">
+            <h3 class="quiz-q display" id="quiz-q"></h3>
+            <ul class="quiz-opts" id="quiz-opts"></ul>
+          </div>
+          <div class="quiz-result" id="quiz-result" role="status" aria-live="polite">
+            <p class="verdict" id="quiz-verdict"></p>
+            <h3 class="display" id="quiz-rtitle"></h3>
+            <p id="quiz-rtext"></p>
+            <div class="cta">
+              <a class="btn primary" href="#hitta" id="quiz-rlink">Hitta mig <span class="arrow" aria-hidden="true">→</span></a>
+              <button class="btn" type="button" id="quiz-again">Gör om testet</button>
+            </div>
+          </div>
+          <p class="quiz-note">Helt ovetenskapligt. Ingen data sparas eller skickas någonstans.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -330,6 +403,80 @@
   } else {
     document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
   }
+
+  // Quiz: fyra frågor, varje svar pekar på en av fyra Martin Carlsson. Allt sker i webbläsaren.
+  (function () {
+    var Q = [
+      { q: "Vad vill du att Martin ska göra för dig?", a: [
+        ["Titta på mitt knä", "lakare"], ["Göra mål i powerplay", "hockey"],
+        ["Boka rätt band till festivalen", "rock"], ["Få mitt hem att varna innan det börjar läcka", "tierp"] ] },
+      { q: "Var träffas ni helst?", a: [
+        ["I ett väntrum", "lakare"], ["I en ishall", "hockey"],
+        ["Framför en scen i Sölvesborg", "rock"], ["På ett kommunfullmäktigemöte i Tierp", "tierp"] ] },
+      { q: "Vilket ord passar bäst in?", a: [
+        ["Recept", "lakare"], ["Utvisning", "hockey"], ["Headliner", "rock"], ["Automation", "tierp"] ] },
+      { q: "Hur beskriver du problemet?", a: [
+        ["Det gör ont när jag gör så här", "lakare"], ["Vi behöver en back med bra skott", "hockey"],
+        ["Ljudet var för lågt på scen två", "rock"], ["Kundtjänsten svarar på samma fråga för hundrade gången", "tierp"] ] }
+    ];
+    var R = {
+      tierp:  { hit: true,  v: "Träff!", t: "Du har hittat rätt Martin Carlsson.", p: "Den i Tierp. Trygghetstjänster på Länsförsäkringar Gävleborg om dagarna, Supportifier om kvällarna och Moderaterna i kommunen däremellan. Länkarna finns här nedanför.", link: "#hitta", cta: "Hitta mig" },
+      lakare: { hit: false, v: "Nära, men nej", t: "Du letar nog efter läkaren.", p: "Det är inte jag, och jag ska definitivt inte titta på ditt knä. Men om du vill att hemmet ska säga till innan något går sönder, eller att kundtjänsten ska slippa svara på samma fråga igen, då är du ändå rätt ute.", link: "#roller", cta: "Se vad jag gör" },
+      hockey: { hit: false, v: "Fel rink", t: "Du letar nog efter hockeyspelaren.", p: "Jag åker skridskor ungefär som en kontorsstol. Däremot är jag bra på att förebygga skador, fast av det slag som drabbar hus. Stanna gärna en stund.", link: "#roller", cta: "Se vad jag gör" },
+      rock:   { hit: false, v: "Fel scen", t: "Du letar nog efter chefredaktören på Sweden Rock.", p: "Jag kan inte boka band. Men jag har hört att kundservice med AI är den nya rocken. Ingen har sagt det. Men jag har hört det.", link: "#roller", cta: "Se vad jag gör" }
+    };
+    var stage = document.getElementById('quiz-stage'); if (!stage) return;
+    var qEl = document.getElementById('quiz-q'), oEl = document.getElementById('quiz-opts'), step = document.getElementById('quiz-step'),
+        dots = document.getElementById('quiz-dots').children, res = document.getElementById('quiz-result');
+    var i = 0, score = { tierp: 0, lakare: 0, hockey: 0, rock: 0 }, order = [];
+    function shuffle(a) { for (var k = a.length - 1; k > 0; k--) { var j = Math.floor(Math.random() * (k + 1)); var t = a[k]; a[k] = a[j]; a[j] = t; } return a; }
+    function render() {
+      var item = Q[i]; step.textContent = 'Fråga ' + (i + 1) + ' av ' + Q.length;
+      for (var d = 0; d < dots.length; d++) { dots[d].className = d < i ? 'done' : (d === i ? 'on' : ''); }
+      qEl.textContent = item.q; oEl.innerHTML = '';
+      order = shuffle(item.a.slice());
+      order.forEach(function (opt, n) {
+        var li = document.createElement('li'), b = document.createElement('button');
+        b.type = 'button'; b.className = 'quiz-opt';
+        b.innerHTML = '<span class="key" aria-hidden="true">' + String.fromCharCode(65 + n) + '</span><span>' + opt[0] + '</span>';
+        b.addEventListener('click', function () { pick(b, opt[1]); });
+        li.appendChild(b); oEl.appendChild(li);
+      });
+      stage.classList.remove('quiz-fade'); void stage.offsetWidth; stage.classList.add('quiz-fade');
+    }
+    function pick(btn, key) {
+      if (btn.disabled) return;
+      Array.prototype.forEach.call(oEl.querySelectorAll('button'), function (b) { b.disabled = true; });
+      btn.classList.add('picked'); score[key]++;
+      setTimeout(function () { i++; if (i < Q.length) { render(); } else { finish(); } }, 420);
+    }
+    function finish() {
+      var best = 'tierp', max = -1;
+      ['tierp', 'lakare', 'hockey', 'rock'].forEach(function (k) { if (score[k] > max) { max = score[k]; best = k; } });
+      var r = R[best];
+      document.getElementById('quiz-verdict').textContent = r.v;
+      document.getElementById('quiz-verdict').className = 'verdict' + (r.hit ? '' : ' miss');
+      document.getElementById('quiz-rtitle').textContent = r.t;
+      document.getElementById('quiz-rtext').textContent = r.p;
+      var link = document.getElementById('quiz-rlink'); link.href = r.link; link.firstChild.textContent = r.cta + ' ';
+      step.textContent = 'Resultat';
+      for (var d = 0; d < dots.length; d++) { dots[d].className = 'done'; }
+      stage.style.display = 'none'; res.classList.add('show');
+    }
+    document.getElementById('quiz-again').addEventListener('click', function () {
+      i = 0; score = { tierp: 0, lakare: 0, hockey: 0, rock: 0 };
+      res.classList.remove('show'); stage.style.display = ''; render();
+      document.getElementById('quiz').scrollIntoView({ block: 'start' });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (res.classList.contains('show')) return;
+      var n = e.key.toUpperCase().charCodeAt(0) - 65;
+      if (e.key.length === 1 && n >= 0 && n < order.length && document.getElementById('quiz').getBoundingClientRect().top < window.innerHeight * 0.5 && document.getElementById('quiz').getBoundingClientRect().bottom > 0) {
+        var b = oEl.querySelectorAll('button')[n]; if (b && !b.disabled && !/input|textarea/i.test(document.activeElement.tagName)) b.click();
+      }
+    });
+    render();
+  })();
 </script>
 
 <script type="application/ld+json">
