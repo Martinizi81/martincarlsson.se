@@ -71,18 +71,22 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   curl mot https://drive.google.com/uc?export=download&id=... (bilder som klistras
   in i chatten sparas inte som filer). Ta bort EXIF-data när bilder sparas om.
 
+## Klart sedan lanseringen (2026-09-27)
+- Google Search Console: domänegendomen martincarlsson.se verifierad (TXT hos one.com),
+  sitemap.xml inskickad och läst av Google samma dag ("Lyckades", 1 sida). En gammal
+  egendom http://www.martincarlsson.se (från 2012) ligger kvar och kan tas bort; den
+  visar att domänen har historik hos Google sedan 2012.
+- Bing Webmaster Tools: importerad från Search Console. Sidan indexerad, inga SEO-fel,
+  Bing läser både JSON-LD och OpenGraph.
+- Inlänkar: martincarlsson.se är inlagd på LinkedIn, Facebook och Instagram.
+- GitHub: kontot mc1successifier (det Claude jobbar som) har skrivrättighet på repot.
+
 ## Öppna punkter
-- Google Search Console: domänegendomen martincarlsson.se är tillagd (verifierad via
-  TXT-post hos one.com) och sitemap.xml inskickad 2026-09-27. Direkt efter
-  inskickningen stod "Hämtning misslyckades" utan datum i "Senast läst", vilket är
-  Googles platshållare tills första hämtningen. Kontrollera igen efter ett par dygn.
-  En gammal egendom http://www.martincarlsson.se (från 2012) ligger kvar och kan tas
-  bort. Domänen har alltså historik hos Google sedan 2012.
-- Länka till martincarlsson.se från LinkedIn (fältet Webbplats), Instagram-bion,
-  Facebook och gärna Successifier/Supportifier. Det är den enskilt största
-  Google-effekten som återstår.
+- Avstämning 2026-10-11 (påminnelse satt i Claude): syns sajten på "Martin Carlsson
+  Tierp" och "Martin Carlsson Länsförsäkringar" i Google och Bing?
 - Innehåll som väntar på besked från Martin: valresultat/uppdrag efter valet 2026
   (texten säger idag bara "kandiderade").
 - Framtida idéer, ej beslutade: länka Rickard Collander, en kort "Skrivet"-sektion
   med länkar till inlägg, egen e-postadress på domänen (martin@martincarlsson.se)
-  i stället för Gmail.
+  i stället för Gmail, LinkedIn-inlägg om sajten (textförslag finns i chatten
+  2026-09-27).
