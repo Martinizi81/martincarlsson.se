@@ -79,6 +79,8 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
 - Bing Webmaster Tools: importerad från Search Console. Sidan indexerad, inga SEO-fel,
   Bing läser både JSON-LD och OpenGraph.
 - Inlänkar: martincarlsson.se är inlagd på LinkedIn, Facebook och Instagram.
+- LinkedIn-inlägg om sajten publicerat 2026-09-27:
+  https://www.linkedin.com/feed/update/urn:li:activity:7509898090208927744/
 - GitHub: kontot mc1successifier (det Claude jobbar som) har skrivrättighet på repot.
 
 ## Öppna punkter
@@ -88,5 +90,4 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   (texten säger idag bara "kandiderade").
 - Framtida idéer, ej beslutade: länka Rickard Collander, en kort "Skrivet"-sektion
   med länkar till inlägg, egen e-postadress på domänen (martin@martincarlsson.se)
-  i stället för Gmail, LinkedIn-inlägg om sajten (textförslag finns i chatten
-  2026-09-27).
+  i stället för Gmail.
