@@ -7,6 +7,8 @@ Länsförsäkringar") till rätt person. Namnet är vanligt; sida 1 på Google �
 läkare, en hockeyspelare och en Sweden Rock-redaktör. Sajten är det tydliga "hemmet"
 för just den här Martin Carlsson.
 
+Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, https).
+
 ## Om Martin (den du jobbar med)
 - Kallas "Chefen". Senior inom IT men inte utvecklare: kan läsa kod, skriver den inte.
 - Vill ha korta, tydliga steg-för-steg-instruktioner när han ska göra något själv.
@@ -19,38 +21,68 @@ för just den här Martin Carlsson.
 - Politik: Moderaterna i Tierps kommun, kandiderade till kommunfullmäktige 2026.
 - LinkedIn: https://www.linkedin.com/in/martincarlsson/ (nyligen bytt från
   martincarlsson1; publik profil är påslagen). Instagram: @martinizi.
+  Facebook: https://www.facebook.com/martin.carlsson. E-post: martin.carlsson@gmail.com
+  (visas på sajten, men aldrig i klartext i källkoden, se Teknik).
 
 ## Teknik
 - Ren statisk HTML, ingen byggprocess, inga ramverk, inga npm-paket. Håll det så.
-- Filer: index.html (allt innehåll, CSS och schema.org Person-markering i en fil),
-  robots.txt, sitemap.xml, .nojekyll.
-- Hostas på GitHub Pages från branchen main, mappen / (root).
+- Filer: index.html (allt innehåll, CSS, JavaScript och schema.org Person-markering i
+  en fil), martin-carlsson.jpg (porträtt 880x1100, ~145 KB), martin-carlsson-og.jpg
+  (delningsbild 1200x630 för og:image), robots.txt, sitemap.xml, .nojekyll, CNAME.
+- CNAME innehåller `martincarlsson.se` och skapades av GitHub när domänen kopplades.
+  Ta inte bort den, då slutar domänen fungera.
+- Hostas på GitHub Pages från branchen main, mappen / (root). Enforce HTTPS är på.
+  DNS ligger hos one.com: fyra A-poster för @ till GitHubs IP-adresser
+  (185.199.108–111.153) och CNAME för www till martinizi81.github.io.
 - Fonter från Google Fonts (Bricolage Grotesque, Source Sans 3, IBM Plex Mono).
+- Design (sedan 2026-09-26): stor typografi i hjälten med "Carlsson" som kontur,
+  porträttet i bågform med flytande skylt, rullande textremsa (ticker), "Fel Martin?"-
+  ruta, de tre rollerna som bento-kort, quiz, kontaktlänkar som chips. Mjuka
+  färgfläckar i bakgrunden animeras långsamt. Sektioner tonas in vid skroll via
+  IntersectionObserver; utan JavaScript visas allt direkt.
 - Sidan har ljust och mörkt tema via CSS-variabler i :root. Behåll båda.
+- All rörelse stängs av vid prefers-reduced-motion. Behåll det.
+- Quizet "Vilken Martin Carlsson letar du efter?": fyra frågor, svar i slumpad ordning,
+  tangenter A–D, resultat via aria-live. Ingen data sparas eller skickas. Inga påståenden
+  om de andra Martin Carlsson utöver yrke (läkare, hockeyspelare, Sweden Rock-redaktör).
+- E-posten ligger baklänges i två data-attribut (data-u, data-d) och sätts ihop i
+  webbläsaren först när besökaren klickar "Klicka för att visa adressen". Kopiera-knapp
+  med kvittens; markeringsförsök ger en knuff mot knappen; Ctrl+C kopierar ändå rätt.
+  Lägg aldrig adressen i klartext i HTML eller i schema.org.
 - Språk: svenska. lang="sv" på html-elementet.
 
 ## Arbetssätt (viktigt)
 - En ändring i taget. Gör ändringen på en egen gren och skapa en pull request så
   Martin kan se diffen och godkänna. Pusha aldrig direkt till main utan att fråga.
+  Mergea bara när Martin uttryckligen ber om det i den aktuella PR:en.
 - Förklara vad du ändrat i vanlig svenska, inte i kodtermer.
 - Uppfinn inga fakta om Martin. Om något saknas (datum, titlar, resultat): fråga.
 - Rör inte schema.org-blocket (<script type="application/ld+json">) utan att säga
   till; det är det som talar om för Google vem sidan handlar om. Uppdatera det när
-  länkar eller titlar ändras i synligt innehåll.
-- Lägg INTE till någon CNAME-fil förrän domänen är registrerad och DNS pekar rätt.
-  Gör man det innan slutar github.io-adressen fungera.
+  länkar eller titlar ändras i synligt innehåll (sameAs ska spegla länkarna under
+  "Hitta mig", utom e-post).
+- Visa förhandsbilder innan Martin godkänner. Skärmdumpar kan tas med den
+  förinstallerade Chromium (/opt/pw-browsers/chromium-*/chrome-linux/chrome,
+  --headless=new --screenshot). Chromium vägrar fönster smalare än 500 px, så
+  mobilvy testas genom att ladda sidan i en 390 px bred iframe. Google Fonts laddas
+  inte i sandlådan, så skärmdumpar visar ersättningstypsnitt. Använd
+  --force-prefers-reduced-motion så att intoningar inte fångas halvvägs.
+- Bilder till sajten hämtas enklast via Google Drive med "Alla som har länken" och
+  curl mot https://drive.google.com/uc?export=download&id=... (bilder som klistras
+  in i chatten sparas inte som filer). Ta bort EXIF-data när bilder sparas om.
 
 ## Öppna punkter
-- Domänen martincarlsson.se är ännu inte registrerad (ledig hos Internetstiftelsen
-  2026-09-26). Martin registrerar den som privatperson hos t.ex. Loopia.
-- När domänen finns: (1) DNS hos registraren: fyra A-poster för @ till
-  185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 samt CNAME för
-  www till Martinizi81.github.io. (2) Lägg till CNAME-fil i repot med
-  innehållet martincarlsson.se. (3) Sätt custom domain + Enforce HTTPS under
-  Settings → Pages. (4) Uppdatera sitemap.xml/canonical om något pekar fel.
-- Därefter: anmäl sajten i Google Search Console och skicka in sitemap.xml.
+- Google Search Console: domänegendomen martincarlsson.se är tillagd (verifierad via
+  TXT-post hos one.com) och sitemap.xml inskickad 2026-09-27. Direkt efter
+  inskickningen stod "Hämtning misslyckades" utan datum i "Senast läst", vilket är
+  Googles platshållare tills första hämtningen. Kontrollera igen efter ett par dygn.
+  En gammal egendom http://www.martincarlsson.se (från 2012) ligger kvar och kan tas
+  bort. Domänen har alltså historik hos Google sedan 2012.
+- Länka till martincarlsson.se från LinkedIn (fältet Webbplats), Instagram-bion,
+  Facebook och gärna Successifier/Supportifier. Det är den enskilt största
+  Google-effekten som återstår.
 - Innehåll som väntar på besked från Martin: valresultat/uppdrag efter valet 2026
-  (texten säger idag bara "kandiderade"), och vilken e-postadress som ska visas
-  (förslag: martin@martincarlsson.se, ej inlagd ännu).
-- Framtida idéer, ej beslutade: länka Rickard Collander, lägga till foto, en kort
-  "Skrivet"-sektion med länkar till inlägg.
+  (texten säger idag bara "kandiderade").
+- Framtida idéer, ej beslutade: länka Rickard Collander, en kort "Skrivet"-sektion
+  med länkar till inlägg, egen e-postadress på domänen (martin@martincarlsson.se)
+  i stället för Gmail.
