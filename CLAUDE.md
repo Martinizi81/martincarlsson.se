@@ -50,6 +50,12 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   webbläsaren först när besökaren klickar "Klicka för att visa adressen". Kopiera-knapp
   med kvittens; markeringsförsök ger en knuff mot knappen; Ctrl+C kopierar ändå rätt.
   Lägg aldrig adressen i klartext i HTML eller i schema.org.
+- "Mitt Tierp" (sedan 2026-10-02): tre ställen Martin själv valt ur en lista från
+  Upplev Norduppland: Leufstabruk Bryggeri, Tierp Arena, Central Hotellet Tierp
+  (centralhotellettierp.se; sajten svarar 403 på curl/robotar men 200 med vanlig
+  webbläsar-User-Agent, så testa med -A "Mozilla/5.0 ..."). Plus "Lokala nyheter" med vanliga
+  länkar till Nya Tierpsposten och tierp.se. Lägg aldrig till ställen Martin inte
+  själv valt, och skriv bara fakta om dem, inte påhittade omdömen.
 - Språk: svenska. lang="sv" på html-elementet.
 
 ## Arbetssätt (viktigt)
@@ -87,10 +93,10 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
 ## Öppna punkter
 - Avstämning 2026-10-11 (påminnelse satt i Claude): syns sajten på "Martin Carlsson
   Tierp" och "Martin Carlsson Länsförsäkringar" i Google och Bing?
-- "Mitt Tierp" (favoritföretag + länkar till Nya Tierpsposten och tierp.se) och
-  "Läsvärt" (egen sida /lasvart/ med Martins kommentarer och eget RSS-flöde) är
-  beslutade 2026-10-02 men väntar på innehåll från Martin. Automatiskt nyhetsflöde
-  från andra sajter är medvetet bortvalt (okontrollerade rubriker, byggprocess).
+- "Läsvärt" (egen sida /lasvart/ med Martins kommentarer och eget RSS-flöde) är
+  beslutat 2026-10-02 men väntar på 4–5 artiklar med kommentarer från Martin.
+  Automatiskt nyhetsflöde från andra sajter är medvetet bortvalt (okontrollerade
+  rubriker bredvid Martins namn, kräver byggprocess, ger inget på Google).
 - Framtida idéer, ej beslutade: länka Rickard Collander, en kort "Skrivet"-sektion
   med länkar till inlägg, egen e-postadress på domänen (martin@martincarlsson.se)
   i stället för Gmail.

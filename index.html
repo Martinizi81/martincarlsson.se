@@ -219,6 +219,25 @@
 
   footer { padding-block: 28px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; font-size: 15px; color: var(--muted); }
 
+  /* ---------- Mitt Tierp ---------- */
+  .tierp { background: var(--bg-2); border-block: 1px solid var(--line); }
+  .places { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0; padding: 0; list-style: none; }
+  .place a {
+    display: grid; grid-template-rows: auto auto 1fr auto; gap: 8px; height: 100%;
+    text-decoration: none; color: var(--ink); background: var(--tile);
+    border: 1px solid var(--line); border-radius: 24px; padding: 24px 24px 22px;
+    transition: transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s, box-shadow .3s;
+  }
+  .place a:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: var(--shadow); }
+  .place .where { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .place h3 { margin: 0; font-size: 24px; line-height: 1.1; }
+  .place p { margin: 0; color: var(--muted); font-size: 17px; }
+  .place .go { font-size: 15px; font-weight: 600; color: var(--accent); }
+  .place .go .arrow { display: inline-block; transition: transform .25s; }
+  .place a:hover .go .arrow { transform: translateX(4px); }
+  .news { margin: 28px 0 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; font-size: 17px; }
+  .news .eyebrow { margin: 0; }
+
   /* ---------- Quiz ---------- */
   .quiz-wrap { background: var(--tile); border: 1px solid var(--line); border-radius: 32px; padding: clamp(24px, 4vw, 44px); box-shadow: var(--shadow); position: relative; overflow: hidden; }
   .quiz-wrap::before { content: ""; position: absolute; inset: auto auto -120px -80px; width: 320px; height: 320px; border-radius: 50%; background: var(--glow-b); filter: blur(60px); pointer-events: none; }
@@ -269,6 +288,7 @@
     .quiz-opt, .quiz-dots i { transition: none; }
     .hero::before, .hero::after, .portrait .badge, .ticker-track { animation: none; }
     .js .reveal { opacity: 1; transform: none; transition: none; }
+    .place a, .place .go .arrow,
     .card, .btn, .links a, .links .mail-btn, .links .mail-copy, .links .mail-toast { transition: none; }
   }
 
@@ -280,6 +300,7 @@
     .section-head { grid-template-columns: 1fr; gap: 8px; }
     .bento { grid-template-columns: 1fr; }
     .card, .card.wide, .card.full { grid-column: auto; min-height: 0; }
+    .places { grid-template-columns: 1fr; }
   }
   @media (max-width: 480px) {
     .wrap { width: min(1120px, 100% - 32px); }
@@ -360,6 +381,36 @@
           <span class="tag">Lokalpolitik</span>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section id="tierp" class="tierp" aria-labelledby="tierp-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Mitt Tierp</p>
+        <h2 class="display" id="tierp-title">Ställen i kommunen jag gillar.</h2>
+      </div>
+      <ul class="places">
+        <li class="place reveal"><a href="https://leufstabrukbryggeri.se/">
+          <span class="where">Lövstabruk</span>
+          <h3 class="display">Leufstabruk Bryggeri</h3>
+          <p>Hantverksbryggeri med egen öl på Systembolaget.</p>
+          <span class="go">leufstabrukbryggeri.se <span class="arrow" aria-hidden="true">→</span></span>
+        </a></li>
+        <li class="place reveal"><a href="https://tierparena.com/">
+          <span class="where">Tierp</span>
+          <h3 class="display">Tierp Arena</h3>
+          <p>Motorsportarena med EM-deltävlingar i dragracing.</p>
+          <span class="go">tierparena.com <span class="arrow" aria-hidden="true">→</span></span>
+        </a></li>
+        <li class="place reveal"><a href="https://centralhotellettierp.se/">
+          <span class="where">Tierp centrum</span>
+          <h3 class="display">Central Hotellet Tierp</h3>
+          <p>Hotell, event och konferens mitt i Tierp.</p>
+          <span class="go">centralhotellettierp.se <span class="arrow" aria-hidden="true">→</span></span>
+        </a></li>
+      </ul>
+      <p class="news"><span class="eyebrow">Lokala nyheter</span> <a href="https://www.nyatierpsposten.se/">Nya Tierpsposten</a> <a href="https://www.tierp.se/">Tierps kommun</a></p>
     </div>
   </section>
 
