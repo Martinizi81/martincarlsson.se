@@ -238,6 +238,22 @@
   .news { margin: 28px 0 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; font-size: 17px; }
   .news .eyebrow { margin: 0; }
 
+  /* ---------- Läsvärt ---------- */
+  .read-card {
+    display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 4vw, 48px); align-items: start;
+    background: var(--tile); border: 1px solid var(--line); border-radius: 28px;
+    padding: clamp(24px, 4vw, 40px); box-shadow: var(--shadow);
+  }
+  .read-card .src { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+  .read-card h3 { margin: 0 0 10px; font-size: clamp(26px, 3vw, 36px); line-height: 1.05; text-wrap: balance; }
+  .read-card h3 a { color: var(--ink); text-decoration: none; }
+  .read-card h3 a:hover { color: var(--accent); }
+  .read-card .sub { margin: 0 0 18px; color: var(--muted); }
+  .read-card blockquote { margin: 0; padding: 4px 0 4px 22px; border-left: 3px solid var(--accent); font-size: clamp(20px, 2vw, 24px); line-height: 1.4; }
+  .read-card blockquote p { margin: 0 0 10px; }
+  .read-card blockquote footer { all: unset; display: block; font-size: 15px; color: var(--muted); }
+  @media (max-width: 860px) { .read-card { grid-template-columns: 1fr; } }
+
   /* ---------- Quiz ---------- */
   .quiz-wrap { background: var(--tile); border: 1px solid var(--line); border-radius: 32px; padding: clamp(24px, 4vw, 44px); box-shadow: var(--shadow); position: relative; overflow: hidden; }
   .quiz-wrap::before { content: ""; position: absolute; inset: auto auto -120px -80px; width: 320px; height: 320px; border-radius: 50%; background: var(--glow-b); filter: blur(60px); pointer-events: none; }
@@ -411,6 +427,27 @@
         </a></li>
       </ul>
       <p class="news"><span class="eyebrow">Lokala nyheter</span> <a href="https://www.nyatierpsposten.se/">Nya Tierpsposten</a> <a href="https://www.tierp.se/">Tierps kommun</a></p>
+    </div>
+  </section>
+
+  <section id="lasvart" aria-labelledby="lasvart-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Läsvärt just nu</p>
+        <h2 class="display" id="lasvart-title">Det här tycker jag att du ska läsa.</h2>
+      </div>
+      <article class="read-card reveal">
+        <div>
+          <p class="src">EFN · 30 september 2026</p>
+          <h3 class="display"><a href="https://efn.se/ai-boomens-100-miljarder-fastnar-i-elnatet">AI-boomens 100 miljarder fastnar i elnätet</a></h3>
+          <p class="sub">Om det planerade AI-datacentret vid Mehedeby i Tierps kommun, och elnätet som håller tillbaka det.</p>
+          <a class="btn" href="https://efn.se/ai-boomens-100-miljarder-fastnar-i-elnatet">Läs artikeln <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <blockquote>
+          <p>Jag tycker att det vore spännande med globala aktörer i Tierps kommun. Det ger jobbtillfällen och sätter Tierp på kartan.</p>
+          <footer>Martin</footer>
+        </blockquote>
+      </article>
     </div>
   </section>
 

@@ -56,6 +56,11 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   webbläsar-User-Agent, så testa med -A "Mozilla/5.0 ..."). Plus "Lokala nyheter" med vanliga
   länkar till Nya Tierpsposten och tierp.se. Lägg aldrig till ställen Martin inte
   själv valt, och skriv bara fakta om dem, inte påhittade omdömen.
+- "Läsvärt just nu" (#lasvart, mellan Mitt Tierp och quizet): källa och datum,
+  rubrik med länk, en neutral faktarad om artikeln, och Martins kommentar som citat.
+  Första artikeln: EFN 2026-09-30 "AI-boomens 100 miljarder fastnar i elnätet"
+  (Vantages planerade AI-datacenter vid Mehedeby). Artikeln ligger delvis bakom
+  betalvägg; författaren anges inte eftersom EFN:s metadata är motsägelsefull.
 - Språk: svenska. lang="sv" på html-elementet.
 
 ## Arbetssätt (viktigt)
@@ -93,8 +98,10 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
 ## Öppna punkter
 - Avstämning 2026-10-11 (påminnelse satt i Claude): syns sajten på "Martin Carlsson
   Tierp" och "Martin Carlsson Länsförsäkringar" i Google och Bing?
-- "Läsvärt" (egen sida /lasvart/ med Martins kommentarer och eget RSS-flöde) är
-  beslutat 2026-10-02 men väntar på 4–5 artiklar med kommentarer från Martin.
+- "Läsvärt": startar som rutan "Läsvärt just nu" på startsidan (sedan 2026-10-02) med
+  en artikel och Martins egen kommentar. När det finns 3–4 artiklar: flytta till egen
+  sida /lasvart/ med eget RSS-flöde och uppdatera sitemap.xml. Kommentarerna ska vara
+  Martins egna ord (lätt putsade), aldrig skrivna åt honom, särskilt i politiska frågor.
   Automatiskt nyhetsflöde från andra sajter är medvetet bortvalt (okontrollerade
   rubriker bredvid Martins namn, kräver byggprocess, ger inget på Google).
 - Framtida idéer, ej beslutade: länka Rickard Collander, en kort "Skrivet"-sektion
