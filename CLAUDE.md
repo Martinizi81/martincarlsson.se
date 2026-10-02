@@ -52,7 +52,8 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   Lägg aldrig adressen i klartext i HTML eller i schema.org.
 - "Mitt Tierp" (sedan 2026-10-02): tre ställen Martin själv valt ur en lista från
   Upplev Norduppland: Leufstabruk Bryggeri, Tierp Arena, Central Hotellet Tierp
-  (har ingen egen webbplats, länkas till Facebook). Plus "Lokala nyheter" med vanliga
+  (centralhotellettierp.se; sajten svarar 403 på curl/robotar men 200 med vanlig
+  webbläsar-User-Agent, så testa med -A "Mozilla/5.0 ..."). Plus "Lokala nyheter" med vanliga
   länkar till Nya Tierpsposten och tierp.se. Lägg aldrig till ställen Martin inte
   själv valt, och skriv bara fakta om dem, inte påhittade omdömen.
 - Språk: svenska. lang="sv" på html-elementet.
