@@ -18,7 +18,8 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
 - Kvällar och helger: medgrundare av Successifier AB tillsammans med huvudgrundaren
   Rickard Collander. Fokus just nu: supportifier.se (AI-kunskapsbas för kundservice
   hos små och medelstora företag). Sajter: successifier.com, successifier.se.
-- Politik: Moderaterna i Tierps kommun, kandiderade till kommunfullmäktige 2026.
+- Politik: Moderaterna i Tierps kommun. Efter valet 2026 andra ersättare i
+  kommunfullmäktige. Politikkortet länkar till kommunens webb-tv från fullmäktige.
 - LinkedIn: https://www.linkedin.com/in/martincarlsson/ (nyligen bytt från
   martincarlsson1; publik profil är påslagen). Instagram: @martinizi.
   Facebook: https://www.facebook.com/martin.carlsson. E-post: martin.carlsson@gmail.com
@@ -86,8 +87,10 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
 ## Öppna punkter
 - Avstämning 2026-10-11 (påminnelse satt i Claude): syns sajten på "Martin Carlsson
   Tierp" och "Martin Carlsson Länsförsäkringar" i Google och Bing?
-- Innehåll som väntar på besked från Martin: valresultat/uppdrag efter valet 2026
-  (texten säger idag bara "kandiderade").
+- "Mitt Tierp" (favoritföretag + länkar till Nya Tierpsposten och tierp.se) och
+  "Läsvärt" (egen sida /lasvart/ med Martins kommentarer och eget RSS-flöde) är
+  beslutade 2026-10-02 men väntar på innehåll från Martin. Automatiskt nyhetsflöde
+  från andra sajter är medvetet bortvalt (okontrollerade rubriker, byggprocess).
 - Framtida idéer, ej beslutade: länka Rickard Collander, en kort "Skrivet"-sektion
   med länkar till inlägg, egen e-postadress på domänen (martin@martincarlsson.se)
   i stället för Gmail.
