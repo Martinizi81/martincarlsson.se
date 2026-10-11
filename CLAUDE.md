@@ -30,6 +30,8 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
 - Filer: index.html (allt innehåll, CSS, JavaScript och schema.org Person-markering i
   en fil), martin-carlsson.jpg (porträtt 880x1100, ~145 KB), martin-carlsson-og.jpg
   (delningsbild 1200x630 för og:image), robots.txt, sitemap.xml, .nojekyll, CNAME.
+- sitemap.xml: uppdatera <lastmod> till datumet för den senaste innehållsändringen
+  i samma PR som ändrar index.html (inte för ändringar som bara rör CLAUDE.md).
 - CNAME innehåller `martincarlsson.se` och skapades av GitHub när domänen kopplades.
   Ta inte bort den, då slutar domänen fungera.
 - Hostas på GitHub Pages från branchen main, mappen / (root). Enforce HTTPS är på.
