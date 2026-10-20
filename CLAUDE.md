@@ -66,7 +66,7 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   Andra artikeln (överst, nyast först): UNT 2026-10-20, ledarkrönika av Johan Rudström,
   "Tierpslistan förde sina väljare bakom ljuset". Faktaraden anger att det är en
   ledarkrönika och återger skribentens påstående som hans, inte som fakta. Kommentaren
-  är Martins egna ord, ordagrant.
+  är Martins eget ord: "Läsvärt."
 - Språk: svenska. lang="sv" på html-elementet.
 
 ## Arbetssätt (viktigt)
