@@ -244,6 +244,7 @@
     background: var(--tile); border: 1px solid var(--line); border-radius: 28px;
     padding: clamp(24px, 4vw, 40px); box-shadow: var(--shadow);
   }
+  .read-card + .read-card { margin-top: 20px; }
   .read-card .src { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
   .read-card h3 { margin: 0 0 10px; font-size: clamp(26px, 3vw, 36px); line-height: 1.05; text-wrap: balance; }
   .read-card h3 a { color: var(--ink); text-decoration: none; }
@@ -436,6 +437,18 @@
         <p class="eyebrow">Läsvärt just nu</p>
         <h2 class="display" id="lasvart-title">Det här tycker jag att du ska läsa.</h2>
       </div>
+      <article class="read-card reveal">
+        <div>
+          <p class="src">UNT · 20 oktober 2026</p>
+          <h3 class="display"><a href="https://www.unt.se/ledare/ledarkronika/artikel/tierpslistan-forde-sina-valjare-bakom-ljuset/r23gx0xl">Tierpslistan förde sina väljare bakom ljuset</a></h3>
+          <p class="sub">Ledarkrönika av Johan Rudström om Tierpslistan, det nya lokalpartiet som enligt skribenten visade sig ingå i en nationell kampanj.</p>
+          <a class="btn" href="https://www.unt.se/ledare/ledarkronika/artikel/tierpslistan-forde-sina-valjare-bakom-ljuset/r23gx0xl">Läs artikeln <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <blockquote>
+          <p>Utmaningar i kommunpolitiken när oseriösa aktörer vill ta sig in, och lyckas lura väljare!</p>
+          <footer>Martin</footer>
+        </blockquote>
+      </article>
       <article class="read-card reveal">
         <div>
           <p class="src">EFN · 30 september 2026</p>

@@ -63,6 +63,10 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   Första artikeln: EFN 2026-09-30 "AI-boomens 100 miljarder fastnar i elnätet"
   (Vantages planerade AI-datacenter vid Mehedeby). Artikeln ligger delvis bakom
   betalvägg; författaren anges inte eftersom EFN:s metadata är motsägelsefull.
+  Andra artikeln (överst, nyast först): UNT 2026-10-20, ledarkrönika av Johan Rudström,
+  "Tierpslistan förde sina väljare bakom ljuset". Faktaraden anger att det är en
+  ledarkrönika och återger skribentens påstående som hans, inte som fakta. Kommentaren
+  är Martins egna ord, ordagrant.
 - Språk: svenska. lang="sv" på html-elementet.
 
 ## Arbetssätt (viktigt)
