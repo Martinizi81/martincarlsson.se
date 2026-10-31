@@ -67,6 +67,12 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   "Tierpslistan förde sina väljare bakom ljuset". Faktaraden anger att det är en
   ledarkrönika och återger skribentens påstående som hans, inte som fakta. Kommentaren
   är Martins eget ord: "Läsvärt."
+  Tredje och fjärde artikeln (2026-10-30, mellan UNT och EFN): TierpsNytt 2026-10-12
+  "Tierp planerar tillägg om energiproduktion i översiktsplan" och SiliconANGLE
+  2026-10-07 "Customer service shifts toward agentic AI" (engelska; rubriken behålls,
+  Martins svenska mening står i faktaraden). Kommentarerna till dessa två är förslag
+  från Claude som Martin själv valt bland, inte hans egna formuleringar.
+  Ordning: nyast först.
 - Språk: svenska. lang="sv" på html-elementet.
 
 ## Arbetssätt (viktigt)
