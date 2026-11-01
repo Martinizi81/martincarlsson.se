@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Läsvärt – Martin Carlsson</title>
+    <link>https://martincarlsson.se/lasvart/</link>
+    <atom:link href="https://martincarlsson.se/lasvart/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>Artiklar som Martin Carlsson i Tierp tycker är värda att läsa, med hans egna kommentarer.</description>
+    <language>sv</language>
+    <item>
+      <title>Tierpslistan förde sina väljare bakom ljuset</title>
+      <link>https://www.unt.se/ledare/ledarkronika/artikel/tierpslistan-forde-sina-valjare-bakom-ljuset/r23gx0xl</link>
+      <guid isPermaLink="true">https://www.unt.se/ledare/ledarkronika/artikel/tierpslistan-forde-sina-valjare-bakom-ljuset/r23gx0xl</guid>
+      <pubDate>Tue, 20 Oct 2026 08:00:00 +0000</pubDate>
+      <source url="https://martincarlsson.se/lasvart/rss.xml">UNT</source>
+      <description>UNT, 20 oktober 2026. Ledarkrönika av Johan Rudström om Tierpslistan, det nya lokalpartiet som enligt skribenten visade sig ingå i en nationell kampanj. Martins kommentar: ”Läsvärt.”</description>
+    </item>
+    <item>
+      <title>Tierp planerar tillägg om energiproduktion i översiktsplan</title>
+      <link>https://tierpsnytt.se/kommunalt/tierp-planerar-tillagg-om-energiproduktion-i-oversiktsplan-153944</link>
+      <guid isPermaLink="true">https://tierpsnytt.se/kommunalt/tierp-planerar-tillagg-om-energiproduktion-i-oversiktsplan-153944</guid>
+      <pubDate>Mon, 12 Oct 2026 08:00:00 +0000</pubDate>
+      <source url="https://martincarlsson.se/lasvart/rss.xml">TierpsNytt</source>
+      <description>TierpsNytt, 12 oktober 2026. Utskottet för samhällsbyggnad vill ta fram ett tillägg om energiproduktion till Tierps Översiktsplan 2050. Martins kommentar: ”Energifrågan kommer att forma Tierp de kommande åren. Den här är värd att följa.”</description>
+    </item>
+    <item>
+      <title>Customer service shifts toward agentic AI</title>
+      <link>https://siliconangle.com/2026/10/07/ai-customer-service-in-contact-center-summitcontactcentersummit/</link>
+      <guid isPermaLink="true">https://siliconangle.com/2026/10/07/ai-customer-service-in-contact-center-summitcontactcentersummit/</guid>
+      <pubDate>Wed, 07 Oct 2026 08:00:00 +0000</pubDate>
+      <source url="https://martincarlsson.se/lasvart/rss.xml">SiliconANGLE</source>
+      <description>SiliconANGLE, 7 oktober 2026. Kundservice använder mer och mer agentisk AI: om hur AI-agenter används och när en människa tar över. Artikeln är på engelska. Martins kommentar: ”En bra bild av vart kundservice är på väg. Särskilt delen om när en människa ska ta över.”</description>
+    </item>
+    <item>
+      <title>AI-boomens 100 miljarder fastnar i elnätet</title>
+      <link>https://efn.se/ai-boomens-100-miljarder-fastnar-i-elnatet</link>
+      <guid isPermaLink="true">https://efn.se/ai-boomens-100-miljarder-fastnar-i-elnatet</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0000</pubDate>
+      <source url="https://martincarlsson.se/lasvart/rss.xml">EFN</source>
+      <description>EFN, 30 september 2026. Om det planerade AI-datacentret vid Mehedeby i Tierps kommun, och elnätet som håller tillbaka det. Martins kommentar: ”Jag tycker att det vore spännande med globala aktörer i Tierps kommun. Det ger jobbtillfällen och sätter Tierp på kartan.”</description>
+    </item>
+  </channel>
+</rss>

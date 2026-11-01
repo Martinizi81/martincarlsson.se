@@ -54,7 +54,8 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   webbläsaren först när besökaren klickar "Klicka för att visa adressen". Kopiera-knapp
   med kvittens; markeringsförsök ger en knuff mot knappen; Ctrl+C kopierar ändå rätt.
   Lägg aldrig adressen i klartext i HTML eller i schema.org.
-- "I media" (#media, sedan 2026-11-01, mellan rollerna och Mitt Tierp): artiklar om
+- "I media" (#media, sedan 2026-11-01, mellan rollerna och Mitt Tierp, rubrik
+  "Martin Carlsson i media." med namnet för Googles skull): artiklar om
   Martin. Samma kortformat som Läsvärt, men citatet är Martins egna ord ur artikeln
   (ordagrant), inte en kommentar. Första: Gefle Dagblad 2025-12-25 "Så ska
   barndomsvännerna få fler att svara i telefon" (Angelica Ränttilä; LF Gävleborg och
@@ -71,6 +72,13 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   webbläsar-User-Agent, så testa med -A "Mozilla/5.0 ..."). Plus "Lokala nyheter" med vanliga
   länkar till Nya Tierpsposten och tierp.se. Lägg aldrig till ställen Martin inte
   själv valt, och skriv bara fakta om dem, inte påhittade omdömen.
+- Läsvärt har egen sida sedan 2026-11-01: lasvart/index.html (alla artiklar, nyast
+  först) och lasvart/rss.xml (RSS 2.0). Startsidans #lasvart visar bara den senaste
+  artikeln plus länk till /lasvart/ och RSS. Ny artikel = uppdatera tre ställen:
+  kortet på startsidan (byt till den nya), kortet överst i lasvart/index.html och ett
+  nytt <item> överst i rss.xml; samt <lastmod> för båda sidorna i sitemap.xml.
+  lasvart/index.html har en egen kopia av CSS:en (ingen byggprocess), så designändringar
+  i read-card behöver göras på båda ställena.
 - "Läsvärt just nu" (#lasvart, mellan Mitt Tierp och quizet): källa och datum,
   rubrik med länk, en neutral faktarad om artikeln, och Martins kommentar som citat.
   Första artikeln: EFN 2026-09-30 "AI-boomens 100 miljarder fastnar i elnätet"
@@ -130,8 +138,8 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
 - Avstämning 2026-10-11 (påminnelse satt i Claude): syns sajten på "Martin Carlsson
   Tierp" och "Martin Carlsson Länsförsäkringar" i Google och Bing?
 - "Läsvärt": startar som rutan "Läsvärt just nu" på startsidan (sedan 2026-10-02) med
-  en artikel och Martins egen kommentar. När det finns 3–4 artiklar: flytta till egen
-  sida /lasvart/ med eget RSS-flöde och uppdatera sitemap.xml. Kommentarerna ska vara
+  en artikel och Martins egen kommentar. Flyttad till egen sida /lasvart/ med RSS
+  2026-11-01 (fyra artiklar). Kommentarerna ska vara
   Martins egna ord (lätt putsade), aldrig skrivna åt honom, särskilt i politiska frågor.
   Automatiskt nyhetsflöde från andra sajter är medvetet bortvalt (okontrollerade
   rubriker bredvid Martins namn, kräver byggprocess, ger inget på Google).
