@@ -77,8 +77,8 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
 
 ## Arbetssätt (viktigt)
 - Gör de ändringar Martin ber om, i den omfattning han ber om dem. Jobba på en egen
-  gren och skapa en pull request så Martin kan se diffen och godkänna. Pusha aldrig direkt till main utan att fråga.
-  Mergea bara när Martin uttryckligen ber om det i den aktuella PR:en.
+  gren och skapa en pull request så Martin kan se diffen och godkänna. Pusha aldrig
+  direkt till main utan att fråga. Mergea bara när Martin uttryckligen ber om det i den aktuella PR:en.
 - Förklara vad du ändrat i vanlig svenska, inte i kodtermer.
 - Uppfinn inga fakta om Martin. Om något saknas (datum, titlar, resultat): fråga.
 - Rör inte schema.org-blocket (<script type="application/ld+json">) utan att säga
