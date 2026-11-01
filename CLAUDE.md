@@ -61,6 +61,10 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   Truecallers företagstjänst). Varje artikel läggs även i schema.org som subjectOf
   (NewsArticle). Artikeln kallar honom "affärsansvarig för trygghetstjänster"; sajten
   behåller titeln Chef Trygghetstjänster.
+  Annonsartiklar (Ljusnan, under /brandstudio/, rubrik "ANNONS:") får vara med men
+  märks "Annons" i källraden, beskrivs som annonsartikel och läggs i schema.org som
+  AdvertiserContentArticle, aldrig som NewsArticle. Två finns sedan 2026-11-01:
+  Ljusnan 2026-07-20 och 2026-09-21 om Alf. Ordning: nyast först.
 - "Mitt Tierp" (sedan 2026-10-02): tre ställen Martin själv valt ur en lista från
   Upplev Norduppland: Leufstabruk Bryggeri, Tierp Arena, Central Hotellet Tierp
   (centralhotellettierp.se; sajten svarar 403 på curl/robotar men 200 med vanlig
