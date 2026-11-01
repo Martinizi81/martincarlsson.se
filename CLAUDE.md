@@ -52,6 +52,13 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   webbläsaren först när besökaren klickar "Klicka för att visa adressen". Kopiera-knapp
   med kvittens; markeringsförsök ger en knuff mot knappen; Ctrl+C kopierar ändå rätt.
   Lägg aldrig adressen i klartext i HTML eller i schema.org.
+- "I media" (#media, sedan 2026-11-01, mellan rollerna och Mitt Tierp): artiklar om
+  Martin. Samma kortformat som Läsvärt, men citatet är Martins egna ord ur artikeln
+  (ordagrant), inte en kommentar. Första: Gefle Dagblad 2025-12-25 "Så ska
+  barndomsvännerna få fler att svara i telefon" (Angelica Ränttilä; LF Gävleborg och
+  Truecallers företagstjänst). Varje artikel läggs även i schema.org som subjectOf
+  (NewsArticle). Artikeln kallar honom "affärsansvarig för trygghetstjänster"; sajten
+  behåller titeln Chef Trygghetstjänster.
 - "Mitt Tierp" (sedan 2026-10-02): tre ställen Martin själv valt ur en lista från
   Upplev Norduppland: Leufstabruk Bryggeri, Tierp Arena, Central Hotellet Tierp
   (centralhotellettierp.se; sajten svarar 403 på curl/robotar men 200 med vanlig
