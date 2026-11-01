@@ -73,6 +73,9 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   Martins svenska mening står i faktaraden). Kommentarerna till dessa två är förslag
   från Claude som Martin själv valt bland, inte hans egna formuleringar.
   Ordning: nyast först.
+- Sidtitel och og:title (sedan 2026-11-01): "Martin Carlsson, Tierp – Länsförsäkringar
+  Gävleborg och Supportifier", så att Google-resultatet skiljer honom från andra
+  Martin Carlsson. Tidigare bara "Martin Carlsson".
 - Språk: svenska. lang="sv" på html-elementet.
 
 ## Arbetssätt (viktigt)
