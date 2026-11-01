@@ -10,6 +10,8 @@ för just den här Martin Carlsson.
 Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, https).
 
 ## Om Martin (den du jobbar med)
+- Bakgrund: växte upp i Gävle (gick i Söderskolan), bodde i Stockholm 2007–2012,
+  bor i Tierp sedan 2012. Står i bio-texten på sajten sedan 2026-11-01.
 - Kallas "Chefen". Senior inom IT men inte utvecklare: kan läsa kod, skriver den inte.
 - Vill ha korta, tydliga steg-för-steg-instruktioner när han ska göra något själv.
 - Gillar rak kommunikation, humor och att bli motsagd när något låter för bra.
