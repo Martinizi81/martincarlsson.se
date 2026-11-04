@@ -54,6 +54,10 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   webbläsaren först när besökaren klickar "Klicka för att visa adressen". Kopiera-knapp
   med kvittens; markeringsförsök ger en knuff mot knappen; Ctrl+C kopierar ändå rätt.
   Lägg aldrig adressen i klartext i HTML eller i schema.org.
+- Telefonnumret (sedan 2026-11-04) döljs på samma sätt: li#phone under "Hitta mig",
+  data-u/data-d baklänges, visas som 070-xxx xx xx med tel:-länk efter klick på
+  "Klicka för att visa numret". Samma skript (funktionen hidden) sköter både e-post
+  och telefon. Lägg aldrig numret i klartext i HTML, CLAUDE.md eller schema.org.
 - "I media" (#media, sedan 2026-11-01, mellan rollerna och Mitt Tierp, rubrik
   "Martin Carlsson i media." med namnet för Googles skull): artiklar om
   Martin. Samma kortformat som Läsvärt, men citatet är Martins egna ord ur artikeln

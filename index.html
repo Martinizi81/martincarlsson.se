@@ -217,6 +217,7 @@
   .links .mail-toast.show { opacity: 1; transform: none; }
   html:not(.js) .links .mail-btn { display: none; }
   .links .mail [hidden] { display: none !important; }
+  @media (max-width: 480px) { .links .mail-open { flex-wrap: wrap; max-width: 100%; gap: 6px 12px; border-radius: 22px; } .links .mail-addr { overflow-wrap: anywhere; } }
 
   footer { padding-block: 28px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; font-size: 15px; color: var(--muted); }
 
@@ -565,6 +566,16 @@
           <noscript><span class="k">E-post</span> martin punkt carlsson snabel-a gmail punkt com</noscript>
           <span class="mail-toast" id="mail-toast" role="status" aria-live="polite"></span>
         </li>
+        <li class="mail" id="phone" data-u="0764+" data-d="0901054">
+          <button type="button" class="mail-btn"><span class="k">Telefon</span> <span class="mail-label">Klicka för att visa numret</span></button>
+          <span class="mail-open" hidden>
+            <span class="k">Telefon</span>
+            <a class="mail-addr" href="#">…</a>
+            <button type="button" class="mail-copy" aria-label="Kopiera telefonnumret">Kopiera</button>
+          </span>
+          <noscript><span class="k">Telefon</span> Numret visas när JavaScript är påslaget.</noscript>
+          <span class="mail-toast" role="status" aria-live="polite"></span>
+        </li>
       </ul>
     </div>
   </section>
@@ -661,30 +672,36 @@
     render();
   })();
 
-  // E-post: adressen lagras baklänges i två delar och sätts ihop först när någon klickar.
-  (function () {
-    var li = document.getElementById('mail'); if (!li) return;
+  // E-post och telefon: uppgifterna lagras baklänges i två delar och sätts ihop först när någon klickar.
+  function hidden(id, join, href, show, shown, copied) {
+    var li = document.getElementById(id); if (!li) return;
     var rev = function (t) { return t.split('').reverse().join(''); };
-    var addr = rev(li.getAttribute('data-u')) + '@' + rev(li.getAttribute('data-d'));
-    var btn = document.getElementById('mail-show'), open = li.querySelector('.mail-open'),
-        a = document.getElementById('mail-addr'), copy = document.getElementById('mail-copy'), toast = document.getElementById('mail-toast'), timer;
+    var raw = join(rev(li.getAttribute('data-u')), rev(li.getAttribute('data-d')));
+    var text = show(raw);
+    var btn = li.querySelector('.mail-btn'), open = li.querySelector('.mail-open'),
+        a = li.querySelector('.mail-addr'), copy = li.querySelector('.mail-copy'), toast = li.querySelector('.mail-toast'), timer;
     function say(msg, ms) { toast.textContent = msg; toast.classList.add('show'); clearTimeout(timer); timer = setTimeout(function () { toast.classList.remove('show'); }, ms || 2600); }
     function doCopy() {
-      var done = function () { copy.textContent = 'Kopierad'; copy.classList.add('ok'); say('Kopierad. Hälsningar från Tierp.'); setTimeout(function () { copy.textContent = 'Kopiera'; copy.classList.remove('ok'); }, 2200); };
-      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(addr).then(done, function () { say('Kunde inte kopiera automatiskt: ' + addr, 6000); }); }
-      else { say('Adressen: ' + addr, 6000); }
+      var done = function () { copy.textContent = copied; copy.classList.add('ok'); say(copied + '. Hälsningar från Tierp.'); setTimeout(function () { copy.textContent = 'Kopiera'; copy.classList.remove('ok'); }, 2200); };
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, function () { say('Kunde inte kopiera automatiskt: ' + text, 6000); }); }
+      else { say(text, 6000); }
     }
     btn.addEventListener('click', function () {
-      a.textContent = addr; a.href = 'mailto:' + addr;
+      a.textContent = text; a.href = href(raw);
       btn.hidden = true; open.hidden = false; copy.focus();
-      say('Där. Robotarna fick ingen adress, det fick du.', 3200);
+      say(shown, 3200);
     });
     copy.addEventListener('click', doCopy);
-    // Försöker man markera adressen med musen: knuffa mot knappen (och kopiera ändå om man kör Ctrl+C).
+    // Försöker man markera med musen: knuffa mot knappen (och kopiera ändå om man kör Ctrl+C).
     a.addEventListener('mousedown', function (e) { if (e.detail > 1) { e.preventDefault(); say('Psst, det finns en knapp för det →'); } });
     a.addEventListener('selectstart', function (e) { e.preventDefault(); say('Psst, det finns en knapp för det →'); });
-    li.addEventListener('copy', function (e) { if (open.hidden) return; e.preventDefault(); e.clipboardData.setData('text/plain', addr); say('Kopierad ändå. Hälsningar från Tierp.'); });
-  })();
+    li.addEventListener('copy', function (e) { if (open.hidden) return; e.preventDefault(); e.clipboardData.setData('text/plain', text); say(copied + ' ändå. Hälsningar från Tierp.'); });
+  }
+  hidden('mail', function (u, d) { return u + '@' + d; }, function (r) { return 'mailto:' + r; },
+    function (r) { return r; }, 'Där. Robotarna fick ingen adress, det fick du.', 'Kopierad');
+  hidden('phone', function (u, d) { return u + d; }, function (r) { return 'tel:' + r; },
+    function (r) { var n = '0' + r.slice(3); return n.slice(0, 3) + '-' + n.slice(3, 6) + ' ' + n.slice(6, 8) + ' ' + n.slice(8); },
+    'Där. Robotarna fick inget nummer, det fick du.', 'Kopierat');
 </script>
 
 <script type="application/ld+json">
