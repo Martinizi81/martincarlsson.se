@@ -66,10 +66,10 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   märks "Annons" i källraden, beskrivs som annonsartikel och läggs i schema.org som
   AdvertiserContentArticle, aldrig som NewsArticle. Två finns sedan 2026-11-01:
   Ljusnan 2026-07-20 och 2026-09-21 om Alf. Ordning: nyast först.
-  Sveriges Radio P4 Gävleborg 2026-11-02 "Experten: Då gäller hemförsäkringen vid
+  Sveriges Radio P4 Gävleborg 2026-11-03 "Experten: Då gäller hemförsäkringen vid
   hackerattack" (radioinslag, 1:28 min; foto Tomas Forsman). Saknar direktcitat i
-  texten, så kortet har inget citat (klassen read-card solo). Datumet är härlett från
-  Martins skärmdump ("Idag 20:55", "På måndagen"). sverigesradio.se svarar 403 mot
+  texten, så kortet har inget citat (klassen read-card solo). Datumet 3 november är
+  bekräftat av Martin (gissningen 2 nov från "På måndagen" var fel). sverigesradio.se svarar 403 mot
   molnmiljön, så be Martin om text eller skärmdump för SR-artiklar.
 - "Mitt Tierp" (sedan 2026-10-02): tre ställen Martin själv valt ur en lista från
   Upplev Norduppland: Leufstabruk Bryggeri, Tierp Arena, Central Hotellet Tierp
