@@ -106,6 +106,16 @@ Live på https://martincarlsson.se sedan 2026-09-26 (GitHub Pages, egen domän, 
   Martins svenska mening står i faktaraden). Kommentarerna till dessa två är förslag
   från Claude som Martin själv valt bland, inte hans egna formuleringar.
   Ordning: nyast först.
+- "Tips" (tips/index.html, sedan 2026-11-17): prylar Martin själv köpt och köper igen,
+  med reklamlänkar till amazon.se (Amazons partnerprogram, spårnings-ID martinizi-21).
+  Länkformat: https://www.amazon.se/dp/<ASIN>?tag=martinizi-21 med
+  rel="sponsored nofollow noopener". Varje kort märks "Reklamlänk", och överst står
+  Amazons upplysningstext ("Som Amazon-associate tjänar jag pengar på kvalificerande
+  köp"). Inga priser och inga produktbilder (Amazons regler). Citaten är Martins egna
+  ord, ordagrant; faktaraden är neutral och hämtad från produktsidan. Sidan har
+  noindex, finns inte i sitemap.xml och länkas inte från startsidan: Martin delar
+  adressen själv. Lägg bara till produkter Martin själv skickar. Martin har sagt att
+  LF är ok med detta (2026-11-17). Egen kopia av CSS:en, som lasvart/.
 - Sidtitel och og:title (sedan 2026-11-01): "Martin Carlsson, Tierp – LF Gävleborg
   och Supportifier" (Martins val av förkortning), så att Google-resultatet skiljer
   honom från andra Martin Carlsson. Ordet "Länsförsäkringar" finns kvar i
